@@ -297,8 +297,6 @@ Expertiza::Application.routes.draw do
       post :add_metareviewer
       get :add_reviewer
       post :add_reviewer
-      post :add_self_reviewer
-      get :add_self_reviewer
       get :add_user_to_assignment
       get :assign_metareviewer_dynamically
       get :assign_reviewer_dynamically
@@ -315,7 +313,6 @@ Expertiza::Application.routes.draw do
       get :select_metareviewer
       get :select_reviewer
       get :select_mapping
-      get :show_available_submissions
       post :assign_quiz_dynamically
       post :assign_metareviewer_dynamically
       post :automatic_review_mapping
@@ -516,11 +513,9 @@ Expertiza::Application.routes.draw do
   root to: 'content_pages#view', page_name: 'home'
 
   get 'users/list', :to => 'users#list'
-  post '/review_mapping/show_available_submissions', :to => 'review_mapping#show_available_submissions'
   get '/submitted_content/remove_hyperlink', :to => 'submitted_content#remove_hyperlink'
   get '/submitted_content/submit_hyperlink', :to => 'submitted_content#submit_hyperlink'
   get '/submitted_content/submit_file', :to => 'submitted_content#submit_file'
-  get '/review_mapping/show_available_submissions', :to => 'review_mapping#show_available_submissions'
   get '/review_mapping/assign_reviewer_dynamically', :to => 'review_mapping#assign_reviewer_dynamically'
   get '/review_mapping/assign_metareviewer_dynamically', :to => 'review_mapping#assign_metareviewer_dynamically'
   get 'response/', :to => 'response#saving'
