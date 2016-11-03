@@ -1,6 +1,12 @@
 java_home = '/usr/lib/jvm/java-7-openjdk-amd64'
 ENV['JAVA_HOME'] = java_home if Dir.exist?(java_home)
 
+gem 'capistrano', '~> 3.0', require: false, group: :development
+group :development do
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+end
+
 source 'http://rubygems.org'
 
 gem 'rails', '~> 4.2.6'
@@ -11,9 +17,7 @@ gem 'activerecord-session_store'
 gem 'airbrake'
 gem 'awesome_nested_set'
 gem 'bind-it'
-gem 'capistrano'
-gem "capistrano-db-tasks", require: false
-gem 'capistrano-rails'
+
 gem 'coveralls', require: false
 gem 'delayed_job_active_record'
 gem 'dynamic_form'
