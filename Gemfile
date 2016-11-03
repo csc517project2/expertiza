@@ -11,7 +11,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 4.2.6'
 
-gem 'aspell-heroku'
+
 
 ## Gems in Alphabetical Order
 
